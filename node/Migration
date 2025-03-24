@@ -1,0 +1,32 @@
+-Migration - Dùng để tạo bảng trong cơ sở dữ liệu
++ Để tạo file migration: php artisan make: migration create_ten_bang_table
++ Để chạy migration: php artisan migrate
++ Để quay lại (rollback) bước vừa migration: php artisan migrate:rollback (php artisan migrate:rollback --step=2 
+(bỏ đi 2 bước cuối cùng))
++ Để xóa toàn bộ các bảng và chạy lại từ đầu: php artisan migrate:refresh
+
+-Seeder - Dùng để tạo dữ liệu
++ Để tạo file seeder: php artisan make:seeder TenBangSeeder
++ Đeerr chạy seeder:
+- Cách 1: php artisan db:seed --class=TenBangSeeder
+- Cách 2: thêm seeder vào file DatabaseSeeder để chạy nhiều seeder cùng 1 lúc
+sau khi thêm thì chạy lệnh php artisan db:seed
+
+-Factory - Fake - dùng để tạo nhiều dữ liệu theo định nghĩa
++ Để dùng được Factory sẽ phải dùng Eloquent (yêu cầu có model)
+- php artisan make:model product
++ Để tạo file Factory: php artisan make:factory TenBangFactory
++ Gọi factory trong file DatabaseSeeder
++ Chạy lệnh php artisan db:seed
+
+
+
+** để làm migration /sedder/factory nhanh 
+1 khơi tạo model : php artisan make:model TenBang - mfs
+2/ khai báo các trường dữ liệu của bàng trong file migration 
+sau đó chạy php artisan migrate
+3/ Khai báo dữ liệu mẫu trong file TenBangSeeder hoặc TenBangFactory
+sau đó gọi vào trong file DatabaseSeeder
+chạy lệnh php artisan db:seed
+ví dụ : Thêm bang teacher vào csdl (full_name,dob,phone,address,active)
+    thêm 30 dữ liệu vào bảng mẫu vừa tạo

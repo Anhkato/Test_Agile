@@ -1,0 +1,5 @@
+1/ router nằm ở file web.php nằm trong router
+2./ Controlle nằm ở các file trong thư mục app/http/Controlles/
+3./ Model nằm ở các file trong thư mục app/Models/ (mỗi model là 1 bảng trong db)
+4./ view nằm ở trong rosources/views/ (phân vùng các view theo folder dễ quản lý )
+

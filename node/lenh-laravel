@@ -1,0 +1,2 @@
+tạo model : php artisan make: model TenBang
+Tạo Controller (resource) : php artisan make:controller ProductController --resource
